@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.sistemabancario.model.ContaTest" time="0.097" tests="6" errors="0" skipped="0" failures="0">
+  <properties/>
+  <testcase name="testSetLimiteContaEspecial" classname="com.sistemabancario.model.ContaTest" time="0.049"/>
+  <testcase name="testHistoricoNotNull" classname="com.sistemabancario.model.ContaTest" time="0.001"/>
+  <testcase name="testSetLimiteContaNaoEspecial" classname="com.sistemabancario.model.ContaTest" time="0.004"/>
+  <testcase name="testSetNumeroValido" classname="com.sistemabancario.model.ContaTest" time="0.001"/>
+  <testcase name="testInstanciaPadraoPoupanca" classname="com.sistemabancario.model.ContaTest" time="0.001"/>
+  <testcase name="testSetNumeroInvalidoNaoArmazena" classname="com.sistemabancario.model.ContaTest" time="0.003"/>
+</testsuite>
