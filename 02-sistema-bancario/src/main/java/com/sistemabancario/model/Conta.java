@@ -100,7 +100,7 @@ public class Conta implements Cadastro {
     public double getSaldoTotal() {
         /* TODO: Você precisa implementar este método. 
         A linha abaixo deve ser substituída pelo seu código */
-        return 0.0d;
+        return saldo + limite;
     }
 
     /**
@@ -129,7 +129,12 @@ public class Conta implements Cadastro {
      * @param valor valor a ser depositado (deve ser um valor positivo)
      */
     public void depositoEnvelope(final double valor) {
-        // TODO: Você precisa implementar este método
+        Movimentacao movimentacao = new Movimentacao(this);
+        movimentacao.setConfirmada(false);
+        movimentacao.setTipo('C');
+        movimentacao.setValor(valor);
+        saldo += valor;
+        movimentacoes.add(movimentacao);
     }
 
     /**
@@ -138,7 +143,20 @@ public class Conta implements Cadastro {
      * @param valor valor a ser depositado (deve ser um valor positivo)
      */
     public void depositoCheque(final double valor) {
-        // TODO: Você precisa implementar este método
+        Movimentacao movimentacao = new Movimentacao(this);
+        movimentacao.setConfirmada(false);
+        movimentacao.setTipo('C');
+        movimentacao.setValor(valor);
+        saldo += valor;
+        movimentacoes.add(movimentacao);
+    }
+    
+    public void depositoDinheiro(final double valor) {
+        Movimentacao movimentacao = new Movimentacao(this);
+        movimentacao.setTipo('C');
+        movimentacao.setValor(valor);
+        saldo += valor;
+        movimentacoes.add(movimentacao);
     }
 
     @Override

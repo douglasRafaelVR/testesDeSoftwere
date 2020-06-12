@@ -13,6 +13,19 @@ package com.sistemabancario.model;
  * 
  * @author Manoel Campos da Silva Filho
  */
+
+/* ---------------------------------------------------------------------------------------------------
+   ---------------------------------------------------------------------------------------------------
+Exigências do professor : 
+
+1º ) Tipo de movimentação foi definida como crédito
+2º ) A movimentação foi confirmada
+4º ) O valor foi atribuído a movimentação
+5º ) incluída na lista de movimentações
+
+   ---------------------------------------------------------------------------------------------------
+   ---------------------------------------------------------------------------------------------------
+*/
 public class Movimentacao implements Cadastro {
     private long id;
     private String descricao;
@@ -21,7 +34,7 @@ public class Movimentacao implements Cadastro {
      * Conta bancária a qual a movimentação está vinculada.
      */
     private Conta conta;
-
+    
     /**
      * Tipo da movimentação deve ser 'C' para crédito (entrada de dinheiro)
      * ou 'D' para débito (saída de dinheiro). (R01)
@@ -38,13 +51,17 @@ public class Movimentacao implements Cadastro {
     /**
      * Indica se a movimentação foi confirmada e deve ser registrada no saldo da
      * conta, quando for adicionada à lista de movimentações usando
+     * 
+     * Ou seja,(na classe conta,) quando essa movimentação for adicionada a lista de movimentações da conta, caso
+     * essa movimentação esteja como "confirmada" seu valor(o da movimentação) será adicionado ao saldo da conta.
+     * 
      * {@link Conta#addMovimentacao(Movimentacao)}.
      *
      * <ul>
      *  <li>Movimentacoes devem ser instanciadas como "confirmadas" por padrão. (R04)</li>
      *  <li>
      *      Somente operações como depósito em envelope ou em cheque devem ser
-     *      registradas inicialmente como não confirmadas. Após uma operação ser
+     *      registradas inicialmente como não confirmadas. Após uma operação ser    < ----  FALTA A 1º PARTE
      *      confirmada, deve-se atualizar o saldo da conta.
      *  <li>
      * </ul>
@@ -58,8 +75,10 @@ public class Movimentacao implements Cadastro {
      * Instancia uma movimentação para uma determinada {@link Conta} bancária. (R05)
      * @param conta a {@link Conta} para vincular a movimentação.
      */
+    
     public Movimentacao(Conta conta){
-        // TODO: Você precisa implementar este método
+        this.conta = conta;
+        this.confirmada = true;
     }
 
     @Override
@@ -77,6 +96,10 @@ public class Movimentacao implements Cadastro {
     }
 
     public void setTipo(char tipo){
+        tipo = Character.toUpperCase(tipo);
+        if((tipo != 'C') && (tipo != 'D')){
+            throw new IllegalArgumentException("argumento inválido, deveria ser ou D ou C");
+        }
         this.tipo = tipo;
     }
 
@@ -93,6 +116,12 @@ public class Movimentacao implements Cadastro {
     }
 
     public void setValor(double valor) {
+            if (valor < 0) {
+                throw new IllegalArgumentException("Valor não pode ser inferior a zero.");
+            }
+            if((tipo == 'D') && (valor > conta.getSaldo())){
+                throw new IllegalStateException("Valor superior ao saldo da conta.");
+            }
         this.valor = valor;
     }
 
@@ -101,6 +130,9 @@ public class Movimentacao implements Cadastro {
     }
 
     public void setConfirmada(boolean confirmada) {
+        if(confirmada){
+            this.conta.depositoDinheiro(valor);
+        }
         this.confirmada = confirmada;
     }
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.sistemabancario.model.MovimentacaoTest" time="0.085" tests="10" errors="0" skipped="0" failures="0">
+  <properties/>
+  <testcase name="testMovimentacoesConfirmadasPorPADRAO_P4" classname="com.sistemabancario.model.MovimentacaoTest" time="0.04"/>
+  <testcase name="testInstaciaMovimentacaoParaConta_P5" classname="com.sistemabancario.model.MovimentacaoTest" time="0.001"/>
+  <testcase name="testMovimentacaoTipoC_P1" classname="com.sistemabancario.model.MovimentacaoTest" time="0.001"/>
+  <testcase name="testMovimentacaoTipoD_P1" classname="com.sistemabancario.model.MovimentacaoTest" time="0.001"/>
+  <testcase name="testMovimentaccaoNaoConfirmadasEmCheque_P4" classname="com.sistemabancario.model.MovimentacaoTest" time="0.001"/>
+  <testcase name="testAtualizarSaldoQuandoMovimentacaoEConfirmada_P4" classname="com.sistemabancario.model.MovimentacaoTest" time="0.001"/>
+  <testcase name="testTipoInvalido_P1" classname="com.sistemabancario.model.MovimentacaoTest" time="0.003"/>
+  <testcase name="testValorMovimentacaoSuperiorAoSaldoConta_P3" classname="com.sistemabancario.model.MovimentacaoTest" time="0.003"/>
+  <testcase name="testValorNegativo_P2" classname="com.sistemabancario.model.MovimentacaoTest" time="0.001"/>
+  <testcase name="testMovimentaccaoNaoConfirmadasEmEnvelope_P4" classname="com.sistemabancario.model.MovimentacaoTest" time="0.001"/>
+</testsuite>
