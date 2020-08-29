@@ -9,9 +9,9 @@ ifdef::env-github[]
 :note-caption: :paperclip:
 :tip-caption: :bulb:
 :warning-caption: :warning:
-endif::[]
+endif::[] 
 
-= Sistema Bancário para Testes com JUnit 5 (link:https://kinolien.github.io/gitzip/?download=/ifto-palmas/testes-de-software/tree/master/projects/02-sistema-bancario[zip])
+= Sistema Bancário para Testes com JUnit 5 (link:https://kinolien.github.io/gitzip/?download=/ifto-palmas/testes-de-software/tree/master/projects/02-sistema-bancario[zip]) image:https://img.shields.io/github/workflow/status/douglasRafaelVR/testesDeSoftwere/maven[GitHub Workflow Status]
 
 Este projeto fornece um conjunto de classes base para que sejam implementados testes unitários.
 O diagrama abaixo apresenta as classes existentes. O projeto fornece documentação dos requisitos a serem implementados
